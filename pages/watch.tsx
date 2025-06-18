@@ -17,4 +17,11 @@ export default function Watch() {
             src="https://www.youtube.com/embed/jQN9Knedjdg"
             title="完整小说视频"
             frameBorder="0"
-            allow="accelerometer; autop
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </main>
+    </div>
+  );
+}
