@@ -21,17 +21,17 @@ const VideoPlayer = () => {
       <ReactPlayer
         url="https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
         playing={playing}
-        controls={true} // 保留 YouTube 控件，防止嵌入失败
+        controls={true} // 保留控件防止跳转问题
         width="100%"
         height="100%"
         config={{
           youtube: {
             playerVars: {
               modestbranding: 1, // 隐藏 logo
-              rel: 0,            // 不显示相关视频
+              rel: 0              // 不显示相关视频
             }
           }
-        }}
+        } as any} // 👈 添加类型断言，避免 TS 报错
       />
     </div>
   );
