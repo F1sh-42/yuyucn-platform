@@ -1,30 +1,27 @@
-"use client";
-import React, { useState } from "react";
-import ReactPlayer from "react-player/youtube";
+import Head from "next/head";
+import Link from "next/link";
+import VideoPlayer from "../components/VideoPlayer";
 
-const VideoPlayer = () => {
-  const [playing, setPlaying] = useState(false);
-
+export default function Home() {
   return (
-    <div className="relative w-full aspect-video bg-black">
-      {!playing && (
-        <button
-          onClick={() => setPlaying(true)}
-          className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 z-10"
-        >
-          <span className="text-white text-2xl">▶ 点击播放试看内容</span>
-        </button>
-      )}
-      <ReactPlayer
-        url="https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
-        playing={playing}
-        controls={false}
-        width="100%"
-        height="100%"
-        style={{ pointerEvents: playing ? "auto" : "none" }}
-      />
+    <div className="min-h-screen bg-gray-100 p-4">
+      <Head>
+        <title>Yuyucn | 小说推文视频平台</title>
+      </Head>
+      <main className="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
+        <h1 className="text-2xl font-bold mb-4">🎬 小说视频试看平台</h1>
+        <p className="mb-4 text-gray-600">观看 3 分钟试看内容，付费解锁后半段</p>
+
+        <VideoPlayer />
+
+        <div className="mt-6 text-center">
+          <Link href="/watch">
+            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+              解锁并继续观看
+            </button>
+          </Link>
+        </div>
+      </main>
     </div>
   );
-};
-
-export default VideoPlayer;
+}
