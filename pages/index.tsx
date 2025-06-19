@@ -1,6 +1,7 @@
-import Head from "next/head";
-import Link from "next/link";
-import VideoPlayer from "../components/VideoPlayer";
+// pages/index.tsx
+import Head from 'next/head';
+import Link from 'next/link';
+import VideoPlayer from '../components/VideoPlayer';
 
 export default function Home() {
   return (
